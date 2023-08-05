@@ -29,27 +29,30 @@ public class Pizza {
 
     public void addExtraCheese(){
         // your code goes here
-        this.price+=80;
-        this.addExtraCheese=true;
-
+        if(!this.addExtraCheese){
+            this.price+=80;
+            this.addExtraCheese=true;
+        }
 
     }
 
     public void addExtraToppings(){
         // your code goes here
-
-        if(this.isVeg)this.price+=70;
-        else this.price+=120;
-        this.addExtraToppings=true;
-
+        if(!this.addExtraToppings){
+            if(this.isVeg)this.price+=70;
+            else this.price+=120;
+            this.addExtraToppings=true;
+        }
 
 
     }
 
     public void addTakeaway(){
         // your code goes here
-        this.price+=20;
-
+        if(!this.addTakeaway){
+            this.price+=20;
+            this.addTakeaway=true;
+        }
     }
 
     public String getBill(){
